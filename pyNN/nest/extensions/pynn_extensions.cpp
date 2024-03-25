@@ -1,14 +1,11 @@
 /*
 
-:copyright: Copyright 2006-2023 by the PyNN team, see AUTHORS.
+:copyright: Copyright 2006-2024 by the PyNN team, see AUTHORS.
 :license: CeCILL, see LICENSE for details.
 
 */
 
 #include "pynn_extensions.h"
-
-// Generated includes:
-#include "config.h"
 
 // include headers with your own stuff
 #include "simple_stochastic_synapse.h"

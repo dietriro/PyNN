@@ -2,7 +2,7 @@
 """
 Definition of NativeCellType class for NEST.
 
-:copyright: Copyright 2006-2023 by the PyNN team, see AUTHORS.
+:copyright: Copyright 2006-2024 by the PyNN team, see AUTHORS.
 :license: CeCILL, see LICENSE for details.
 """
 
@@ -43,7 +43,7 @@ def get_defaults(model_name):
             if isinstance(value, valid_types):
                 default_params[name] = conversion.make_pynn_compatible(value)
             else:
-                warnings.warn("Ignoring parameter '%s' since PyNN does not support %s" %
+                warnings.warn("Ignoring default NEST parameter '%s' since PyNN parameteres cannot be of type %s" %
                               (name, type(value)))
     return default_params, default_initial_values
 

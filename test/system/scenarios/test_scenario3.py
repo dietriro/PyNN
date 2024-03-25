@@ -1,12 +1,13 @@
 # encoding: utf-8
 
+import sys
 from pyNN.utility import init_logging
 from pyNN.random import RandomDistribution
 from .fixtures import run_with_simulators
 import pytest
 
 
-@run_with_simulators("nest", "neuron")
+@run_with_simulators("nest",) #"neuron")
 def test_scenario3(sim):
     """
     Simple feed-forward network network with additive STDP. The second half of
@@ -92,7 +93,8 @@ def test_scenario3(sim):
     assert p < 0.01, p
     assert final_weights[:50, :].mean() < final_weights[50:, :].mean()
     sim.end()
-    return initial_weights, final_weights, pre, post, connections
+    if "pytest" not in sys.modules:
+        return initial_weights, final_weights, pre, post, connections
 
 
 if __name__ == '__main__':

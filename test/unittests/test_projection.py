@@ -2,7 +2,7 @@
 Tests of the common implementation of the Projection class, using the
 pyNN.mock backend.
 
-:copyright: Copyright 2006-2023 by the PyNN team, see AUTHORS.
+:copyright: Copyright 2006-2024 by the PyNN team, see AUTHORS.
 :license: CeCILL, see LICENSE for details.
 """
 
@@ -12,10 +12,7 @@ import os
 import sys
 from numpy.testing import assert_array_equal
 
-try:
-    from unittest.mock import Mock, patch
-except ImportError:
-    from mock import Mock, patch
+from unittest.mock import Mock, patch
 from .mocks import MockRNG
 import pyNN.mock as sim
 
