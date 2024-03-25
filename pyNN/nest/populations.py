@@ -288,3 +288,13 @@ class Population(common.Population, PopulationMixin):
                 # and raise an Exception if not, rather than just emit a warning.
             else:
                 raise
+
+    def _get_cell_initial_value(self, id, variable):
+        index = self.id_to_local_index(id)
+        status = nest.GetStatus(self.node_collection)
+        if variable in status[index].keys():
+            return super()._get_cell_initial_value(id, variable)
+        else:
+            logger.debug(
+                "Variable '{}' can not have an initial value in NEST, returning 0.0".format(variable))
+            return 0.0

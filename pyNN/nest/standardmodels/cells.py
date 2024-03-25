@@ -59,6 +59,7 @@ class IF_curr_exp(cells.IF_curr_exp):
     nest_name = {"on_grid": 'iaf_psc_exp',
                  "off_grid": 'iaf_psc_exp_ps'}
     standard_receptor_type = True
+    default_initial_values = {'v': -65.0}
 
 
 class IF_curr_delta(cells.IF_curr_delta):
